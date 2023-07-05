@@ -7,3 +7,8 @@ Window::Window()
     if (window == NULL) throw("Window could not be created! SDL_Error: %s\n", SDL_GetError());
     
 }
+
+Window::~Window()
+{
+    SDL_DestroyWindow(window);
+}
