@@ -72,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>U:\Projects\FightForMemory\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>U:\Projects\FightForMemory\SDL2-2.28.1\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\SDL2-2.28.1\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>U:\Projects\FightForMemory\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>U:\Projects\FightForMemory\SDL2-2.28.1\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\SDL2-2.28.1\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>U:\Projects\FightForMemory\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>U:\Projects\FightForMemory\SDL2-2.28.1\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\SDL2-2.28.1\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>U:\Projects\FightForMemory\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>U:\Projects\FightForMemory\SDL2-2.28.1\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\SDL2-2.28.1\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
