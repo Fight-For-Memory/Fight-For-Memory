@@ -1,13 +1,17 @@
 #include <SDL.h>
 #include <stdio.h>
 #include "Window.h"
+#include "Renderer.h"
 
 
 int main(int argc, char* args[])
 {
     //The window we'll be rendering to
     Window window;
-
+    Renderer rend(window);
+    SDL_Rect rect = { 50,100,60,200 };
+    rend.DrawRect(&rect);
+    rend.Update();
     //The surface contained by the window
     SDL_Surface* screenSurface = NULL;
 
