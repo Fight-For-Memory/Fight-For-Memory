@@ -1,10 +1,18 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_image.h>
 #include "Renderer.h"
+
+enum class FileType 
+{
+	bitmap,
+	png
+};
+
 class Texture
 {
 public:
-	Texture(const char* filename, Renderer& renderer);
+	Texture(const char* filename, Renderer& renderer, FileType type);
 	~Texture();
 	Texture(const Texture& src) = delete;
 	Texture& operator=(const Texture& src) = delete;
@@ -14,3 +22,4 @@ private:
 	SDL_Surface* image;
 	SDL_Texture* tex = NULL;
 };
+

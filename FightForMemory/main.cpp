@@ -9,9 +9,12 @@ int main(int argc, char* args[])
     //The window we'll be rendering to
     Window window;
     Renderer rend(window);
-    SDL_Rect rect = { 275,150,100,200 };
-    Texture texture("test.bmp", rend);
-    texture.Draw(&rect);
+    SDL_Rect rect1 = { 175,150,100,200 };
+    SDL_Rect rect2 = { 375,150,100,200 };
+    Texture texture1("test.bmp", rend, FileType::bitmap);
+    Texture texture2("zdj.jpg", rend, FileType::png);
+    texture1.Draw(&rect1);
+    texture2.Draw(&rect2);
     rend.Update();
     //The surface contained by the window
     SDL_Surface* screenSurface = NULL;
