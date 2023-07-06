@@ -10,5 +10,7 @@ public:
 	void DrawRect(SDL_Rect* rect);
 	void Update();
 private:
-	SDL_Renderer* renderer;
+	SDL_Renderer* sdl_renderer;
+
+	friend class Texture;
 };
