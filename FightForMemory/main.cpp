@@ -4,6 +4,7 @@
 #include "Renderer.h"
 #include "Texture.h"
 #include "Sound.h"
+#include "Keyboard.h"
 
 int main(int argc, char* args[])
 {
@@ -16,14 +17,34 @@ int main(int argc, char* args[])
     Texture texture1("Resources/test.bmp", rend, FileType::bitmap);
     Texture texture2("Resources/zdj.jpg", rend, FileType::png);
     Sound sample1("Resources/magic-space.wav");
+    Keyboard kbd;
 
     texture1.Draw(&rect1);
     texture2.Draw(&rect2);
-
-    sample1.Play();
-    SDL_Delay(3000);
-    sample1.Pause();
     
+    sample1.Play();
+    SDL_Delay(2000);
+    sample1.Pause();
+
+    while (true)
+    {
+        kbd.Update();
+        if (kbd.IsKeyDown(SDL_SCANCODE_ESCAPE))
+        {
+           printf("%s", "key is down");
+           break;
+        }
+    }
+    
+    while (true)
+    {
+        kbd.Update();
+        if (kbd.IsKeyUp(SDL_SCANCODE_ESCAPE))
+        {
+            printf("%s", "key is up");
+            break;
+        }
+    } 
     rend.Update();
     //The surface contained by the window
     SDL_Surface* screenSurface = NULL;
