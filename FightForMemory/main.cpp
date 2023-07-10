@@ -5,6 +5,7 @@
 #include "Texture.h"
 #include "Sound.h"
 #include "Keyboard.h"
+#include "Mouse.h"
 
 int main(int argc, char* args[])
 {
@@ -18,33 +19,56 @@ int main(int argc, char* args[])
     Texture texture2("Resources/zdj.jpg", rend, FileType::png);
     Sound sample1("Resources/magic-space.wav");
     Keyboard kbd;
+    Mouse mouse;
 
     texture1.Draw(&rect1);
     texture2.Draw(&rect2);
     
-    sample1.Play();
-    SDL_Delay(2000);
-    sample1.Pause();
+   sample1.Play();
+   SDL_Delay(2000);
+   sample1.Pause();
 
     while (true)
     {
         kbd.Update();
         if (kbd.IsKeyDown(SDL_SCANCODE_ESCAPE))
         {
-           printf("%s", "key is down");
+           printf("%s \n", "key is down");
            break;
         }
     }
     
-    while (true)
+    while (true) 
     {
         kbd.Update();
         if (kbd.IsKeyUp(SDL_SCANCODE_ESCAPE))
         {
-            printf("%s", "key is up");
+            printf("%s \n", "key is up");
             break;
         }
-    } 
+    }
+
+    while (true) 
+    {
+        mouse.Update();        
+        if (mouse.LeftIsPressed())
+        {
+            printf("%s \n", "left is pressed");
+            break;
+        }
+        if (mouse.RightIsPressed())
+        {
+            printf("%s \n", "right is pressed");
+            break;
+        }
+        if (mouse.MiddleIsPressed())
+        {
+            printf("%s \n", "middle is pressed");
+            break;
+        }
+    }
+    printf("%s %d\n%s %d", "mouse xPos:", mouse.GetPosX(), "mouse yPos:", mouse.GetPosY());
+
     rend.Update();
     //The surface contained by the window
     SDL_Surface* screenSurface = NULL;
