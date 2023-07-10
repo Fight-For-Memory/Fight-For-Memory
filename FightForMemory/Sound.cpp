@@ -1,25 +1,28 @@
 #include "Sound.h"
+#include <iostream>
+#include <filesystem>
 
-Sound::Sound(const char* filename)
+namespace fs = std::filesystem;
+
+Sound::Sound(int channel, const char* folder_path)
+	:
+	channel(channel)
 {
-	if (SDL_LoadWAV(filename, &wav_spec, &wav_buffer, &wav_length) == NULL)
-		throw SDL_GetError();
-	deviceId = SDL_OpenAudioDevice(NULL, 0, &wav_spec, NULL, 0);
+	for (const auto& entry : fs::directory_iterator(folder_path)) 
+		if (entry.is_regular_file()) 
+			sounds[entry.path().filename().stem().string()] = Mix_LoadWAV(entry.path().string().c_str());
+	Mix_Volume(channel, 10);
+}
+
+void Sound::Play(std::string sound)
+{
+	Mix_PlayChannel(channel, sounds[sound], 0);
 }
 
 Sound::~Sound()
 {
-	SDL_CloseAudioDevice(deviceId);
-	SDL_FreeWAV(wav_buffer);
+	for(auto& sound : sounds)
+		Mix_FreeChunk(sound.second);
 }
 
-void Sound::Play()
-{
-	SDL_QueueAudio(deviceId, wav_buffer, wav_length);
-	SDL_PauseAudioDevice(deviceId, 0);
-}
 
-void Sound::Pause()
-{
-	SDL_PauseAudioDevice(deviceId, 1);
-}

@@ -1,18 +1,18 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_mixer.h>
+#include <map>
+#include <string>
+
 
 class Sound
 {
 public:
-	Sound(const char* filename);
+	Sound(int channel, const char* folder_path);
 	~Sound();
-	void Play();
-	void Pause();
+	void Play(std::string sound);
 private:
-	SDL_AudioDeviceID deviceId;
-	SDL_AudioSpec wav_spec;
-	Uint32 wav_length;
-	Uint8* wav_buffer;
+	std::map<std::string,Mix_Chunk*> sounds;
+	const int channel;
 };
  
