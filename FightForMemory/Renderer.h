@@ -13,4 +13,5 @@ private:
 	SDL_Renderer* sdl_renderer;
 
 	friend class Texture;
+	friend class Font;
 };

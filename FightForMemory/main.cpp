@@ -6,10 +6,12 @@
 #include "Sound.h"
 #include "Keyboard.h"
 #include "Mouse.h"
+#include "Font.h"
 
 int main(int argc, char* args[])
 {
     SDL_Init(SDL_INIT_AUDIO);
+    TTF_Init();
     //The window we'll be rendering to
     Window window;
     Renderer rend(window);
@@ -20,13 +22,15 @@ int main(int argc, char* args[])
     Sound sample1("Resources/magic-space.wav");
     Keyboard kbd;
     Mouse mouse;
+    Font text1("Witaj Cyprian :)", "Resources/Arial.ttf", 25, rend, { 175, 0, 300, 50 }, { 255,100,100 });
+    Font text2("Witaj Hubert  :)", "Resources/Arial.ttf", 25, rend, { 175, 75, 300, 50 }, { 100,255,100 });
 
     texture1.Draw(&rect1);
     texture2.Draw(&rect2);
     
-   sample1.Play();
-   SDL_Delay(2000);
-   sample1.Pause();
+    sample1.Play();
+    SDL_Delay(2000);
+    sample1.Pause();
 
     while (true)
     {
@@ -69,7 +73,23 @@ int main(int argc, char* args[])
     }
     printf("%s %d\n%s %d", "mouse xPos:", mouse.GetPosX(), "mouse yPos:", mouse.GetPosY());
 
+    text1.DisplayText();
+    text2.DisplayText();
     rend.Update();
+
+    SDL_Delay(1000);
+    text1.HideText({ 0,0,0,255 });
+    rend.Update();
+
+    SDL_Delay(1000);
+    text2.HideText({ 0,0,0,255 });
+    rend.Update();
+
+    SDL_Delay(1000);
+    text1.DisplayText();
+    text2.DisplayText();
+    rend.Update();
+
     //The surface contained by the window
     SDL_Surface* screenSurface = NULL;
 
