@@ -11,12 +11,22 @@ Sound::Sound(int channel, const char* folder_path)
 	for (const auto& entry : fs::directory_iterator(folder_path)) 
 		if (entry.is_regular_file()) 
 			sounds[entry.path().filename().stem().string()] = Mix_LoadWAV(entry.path().string().c_str());
-	Mix_Volume(channel, 10);
+	
 }
 
 void Sound::Play(std::string sound)
 {
 	Mix_PlayChannel(channel, sounds[sound], 0);
+}
+
+void Sound::SetVolume(int volume)
+{
+	Mix_Volume(channel, volume);
+}
+
+void Sound::SetVolume(int channel, int volume)
+{
+	Mix_Volume(channel, volume);
 }
 
 Sound::~Sound()

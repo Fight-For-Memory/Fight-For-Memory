@@ -24,7 +24,7 @@ int main(int argc, char* args[])
     texture2.Draw(&rect2);
 
     PlayerSounds.Play("zombie");
-    
+    PlayerSounds.SetVolume(10);
     rend.Update();
     //The surface contained by the window
     SDL_Surface* screenSurface = NULL;
