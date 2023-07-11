@@ -4,13 +4,14 @@
 #include "Renderer.h"
 #include "Texture.h"
 #include "Sound.h"
+#include "Music.h"
 #include <SDL_mixer.h>
 
 int main(int argc, char* args[])
 {
     SDL_Init(SDL_INIT_AUDIO);
-    Mix_Init(MIX_INIT_MP3);
-    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+    //Mix_Init(MIX_INIT_MP3);
+    Music::Init();
     //The window we'll be rendering to
     Window window;
     Renderer rend(window);
