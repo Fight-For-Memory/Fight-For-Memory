@@ -5,7 +5,7 @@ Renderer::Renderer(Window& window)
 	sdl_renderer = SDL_CreateRenderer(window.window, -1, SDL_RENDERER_ACCELERATED);
 
 	SDL_RenderClear(sdl_renderer);
-	SDL_SetRenderDrawColor(sdl_renderer, 255, 100, 10, 100);
+	SDL_SetRenderDrawColor(sdl_renderer, DrawColor.r, DrawColor.g, DrawColor.b , DrawColor.a);
 }
 
 Renderer::~Renderer()
@@ -21,4 +21,10 @@ void Renderer::DrawRect(SDL_Rect* rect)
 void Renderer::Update()
 {
 	SDL_RenderPresent(sdl_renderer);
+}
+
+void Renderer::SetDrawColor(Color Color)
+{
+	DrawColor = Color;
+	SDL_SetRenderDrawColor(sdl_renderer, DrawColor.r, DrawColor.g, DrawColor.b, DrawColor.a);
 }
