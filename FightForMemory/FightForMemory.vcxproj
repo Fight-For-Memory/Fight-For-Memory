@@ -72,22 +72,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(ProjectDir)..\SDL2_image-2.6.3\include;$(ProjectDir)..\SDL2_mixer-2.6.3\include;$(ProjectDir)..\SDL2_ttf-2.20.2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(ProjectDir)..\SDL2_image-2.6.3\include;$(ProjectDir)..\SDL2_mixer-2.6.3\include;$(ProjectDir)..\SDL2_ttf-2.20.2\include;$(ProjectDir)\Input;$(ProjectDir)\Graphics;$(ProjectDir)\Audio;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\SDL2-2.28.1\lib\x86;$(ProjectDir)..\SDL2_image-2.6.3\lib\x86;$(ProjectDir)..\SDL2_mixer-2.6.3\lib\x86;$(ProjectDir)..\SDL2_ttf-2.20.2\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(ProjectDir)..\SDL2_image-2.6.3\include;$(ProjectDir)..\SDL2_mixer-2.6.3\include;$(ProjectDir)..\SDL2_ttf-2.20.2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(ProjectDir)..\SDL2_image-2.6.3\include;$(ProjectDir)..\SDL2_mixer-2.6.3\include;$(ProjectDir)..\SDL2_ttf-2.20.2\include;$(ProjectDir)\Input;$(ProjectDir)\Graphics;$(ProjectDir)\Audio;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\SDL2-2.28.1\lib\x86;$(ProjectDir)..\SDL2_image-2.6.3\lib\x86;$(ProjectDir)..\SDL2_mixer-2.6.3\lib\x86;$(ProjectDir)..\SDL2_ttf-2.20.2\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(ProjectDir)..\SDL2_image-2.6.3\include;$(ProjectDir)..\SDL2_mixer-2.6.3\include;$(ProjectDir)..\SDL2_ttf-2.20.2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(ProjectDir)..\SDL2_image-2.6.3\include;$(ProjectDir)..\SDL2_mixer-2.6.3\include;$(ProjectDir)..\SDL2_ttf-2.20.2\include;$(ProjectDir)\Input;$(ProjectDir)\Graphics;$(ProjectDir)\Audio;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\SDL2-2.28.1\lib\x64;$(ProjectDir)..\SDL2_image-2.6.3\lib\x64;$(ProjectDir)..\SDL2_mixer-2.6.3\lib\x64;$(ProjectDir)..\SDL2_ttf-2.20.2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(ProjectDir)..\SDL2_image-2.6.3\include;$(ProjectDir)..\SDL2_mixer-2.6.3\include;$(ProjectDir)..\SDL2_ttf-2.20.2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\SDL2-2.28.1\include;$(ProjectDir)..\SDL2_image-2.6.3\include;$(ProjectDir)..\SDL2_mixer-2.6.3\include;$(ProjectDir)..\SDL2_ttf-2.20.2\include;$(ProjectDir)\Input;$(ProjectDir)\Graphics;$(ProjectDir)\Audio;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\SDL2-2.28.1\lib\x64;$(ProjectDir)..\SDL2_image-2.6.3\lib\x64;$(ProjectDir)..\SDL2_mixer-2.6.3\lib\x64;$(ProjectDir)..\SDL2_ttf-2.20.2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -163,26 +163,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Music.cpp" />                   
-    <ClCompile Include="Font.cpp" />
-    <ClCompile Include="Keyboard.cpp" />
-    <ClCompile Include="Mouse.cpp" />
-    <ClCompile Include="Sound.cpp" />
-    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Audio\Music.cpp" />
+    <ClCompile Include="Graphics\Font.cpp" />
+    <ClCompile Include="Input\Keyboard.cpp" />
+    <ClCompile Include="Input\Mouse.cpp" />
+    <ClCompile Include="Audio\Sound.cpp" />
+    <ClCompile Include="Graphics\Texture.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Graphics\Renderer.cpp" />
+    <ClCompile Include="Graphics\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Music.h" />
-    <ClInclude Include="Color.h" />
-    <ClInclude Include="Font.h" />
-    <ClInclude Include="Keyboard.h" />
-    <ClInclude Include="Mouse.h" />
-    <ClInclude Include="Sound.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="Audio\Music.h" />
+    <ClInclude Include="Graphics\Color.h" />
+    <ClInclude Include="Graphics\Font.h" />
+    <ClInclude Include="Input\Keyboard.h" />
+    <ClInclude Include="Input\Mouse.h" />
+    <ClInclude Include="Audio\Sound.h" />
+    <ClInclude Include="Graphics\Texture.h" />
+    <ClInclude Include="Graphics\Renderer.h" />
+    <ClInclude Include="Graphics\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resources\magic space.mp3" />
