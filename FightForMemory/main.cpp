@@ -1,9 +1,11 @@
 #include <SDL.h>
 #include <stdio.h>
+#include <SDL_mixer.h>
 #include "Window.h"
 #include "Renderer.h"
 #include "Texture.h"
 #include "Sound.h"
+#include "Music.h"
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Font.h"
@@ -11,6 +13,7 @@
 int main(int argc, char* args[])
 {
     SDL_Init(SDL_INIT_AUDIO);
+    Music::Init();
     TTF_Init();
     //The window we'll be rendering to
     Window window;
@@ -19,18 +22,23 @@ int main(int argc, char* args[])
     SDL_Rect rect2 = { 375,150,100,200 };
     Texture texture1("Resources/test.bmp", rend, FileType::bitmap);
     Texture texture2("Resources/zdj.jpg", rend, FileType::png);
-    Sound sample1("Resources/magic-space.wav");
     Keyboard kbd;
     Mouse mouse;
+
+    Sound PlayerSounds(1,"Resources/Sounds");
+
+    texture1.Draw(&rect1);
+    texture2.Draw(&rect2);
+
+    PlayerSounds.Play("zombie");
+    PlayerSounds.SetVolume(10);
+
     Font text1("Witaj Cyprian :)", "Resources/Arial.ttf", 35, rend, { 175, 0, 300, 50 }, { 255,100,100 });
     Font text2("Witaj Hubert  :)", "Resources/Arial.ttf", 35, rend, { 175, 75, 300, 50 }, { 100,255,100 });
 
     texture1.Draw(&rect1);
     texture2.Draw(&rect2);
     
-    sample1.Play();
-    SDL_Delay(2000);
-    sample1.Pause();
 
     while (true)
     {
@@ -101,7 +109,10 @@ int main(int argc, char* args[])
     SDL_Event e; bool quit = false; while (quit == false) { while (SDL_PollEvent(&e)) { if (e.type == SDL_QUIT) quit = true; } }
 
     //Quit SDL subsystems
+    IMG_Quit();
     SDL_Quit();
+    Mix_Quit();
+    Mix_CloseAudio();
 
     return 0;
 }
