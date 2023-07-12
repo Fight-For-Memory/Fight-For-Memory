@@ -164,6 +164,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Audio\Music.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics\Font.cpp" />
     <ClCompile Include="Input\Keyboard.cpp" />
     <ClCompile Include="Input\Mouse.cpp" />
@@ -175,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio\Music.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics\Color.h" />
     <ClInclude Include="Graphics\Font.h" />
     <ClInclude Include="Input\Keyboard.h" />
