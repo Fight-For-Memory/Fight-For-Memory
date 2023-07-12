@@ -22,8 +22,8 @@ int main(int argc, char* args[])
     Sound sample1("Resources/magic-space.wav");
     Keyboard kbd;
     Mouse mouse;
-    Font text1("Witaj Cyprian :)", "Resources/Arial.ttf", 25, rend, { 175, 0, 300, 50 }, { 255,100,100 });
-    Font text2("Witaj Hubert  :)", "Resources/Arial.ttf", 25, rend, { 175, 75, 300, 50 }, { 100,255,100 });
+    Font text1("Witaj Cyprian :)", "Resources/Arial.ttf", 35, rend, { 175, 0, 300, 50 }, { 255,100,100 });
+    Font text2("Witaj Hubert  :)", "Resources/Arial.ttf", 35, rend, { 175, 75, 300, 50 }, { 100,255,100 });
 
     texture1.Draw(&rect1);
     texture2.Draw(&rect2);
@@ -82,7 +82,7 @@ int main(int argc, char* args[])
     rend.Update();
 
     SDL_Delay(1000);
-    text2.HideText({ 0,0,0,255 });
+    text2.HideText({ 255,0,0,255 });
     rend.Update();
 
     SDL_Delay(1000);

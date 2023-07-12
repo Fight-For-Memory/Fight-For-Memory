@@ -161,6 +161,7 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Color.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mouse.h" />
