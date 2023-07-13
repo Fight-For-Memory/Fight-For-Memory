@@ -6,7 +6,7 @@ SDL_Event e;
 bool run = true;
 Game* game;
 Music music;
-Window* window = new Window();
+Window* window = new Window(640,480);
 
 void Init();
 void Quit();

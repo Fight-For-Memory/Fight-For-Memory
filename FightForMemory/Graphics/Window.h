@@ -5,11 +5,11 @@
 class Window
 {
 public:
-	Window();
+	Window(int width, int height);
 	~Window();
 	//Screen dimension constants
-	static constexpr int SCREEN_WIDTH = 640;
-	static constexpr int SCREEN_HEIGHT = 480;
+	const int width;
+	const int height;
 
 	Renderer** GetRenderer();
 
