@@ -11,10 +11,7 @@ Game::Game(Keyboard& kbd, Mouse& mouse)
 
 Game::~Game()
 {
-    IMG_Quit();
-    SDL_Quit();
-    Mix_Quit();
-    Mix_CloseAudio();
+   
 }
 
 void Game::Update()
