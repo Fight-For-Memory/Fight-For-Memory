@@ -1,12 +1,12 @@
 #include "Game.h"
 
-Game::Game(Keyboard& kbd, Mouse& mouse)
+Game::Game(Keyboard& kbd, Mouse& mouse, Music& music)
     :
     kbd(kbd),
-    mouse(mouse)
+    mouse(mouse),
+    music(music)
 {
-    PlayerSounds.Play("zombie");
-    PlayerSounds.SetVolume(10);
+    music.Play("Resources/gravity_turn_action.mp3", 75);
 }
 
 Game::~Game()

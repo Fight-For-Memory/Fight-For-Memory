@@ -14,7 +14,7 @@
 class Game
 {
 public:
-	Game(Keyboard& kbd, Mouse& mouse);
+	Game(Keyboard& kbd, Mouse& mouse, Music& music);
     ~Game();
     void Update();
     void Draw();
@@ -27,6 +27,7 @@ private:
     Texture texture2 = Texture("Resources/zdj.jpg", rend, FileType::png);
     Keyboard& kbd;
     Mouse& mouse;
+    Music& music;
     Sound PlayerSounds = Sound(1, "Resources/Sounds");
     Font text1 = Font("Witaj Cyprian :)", "Resources/Arial.ttf", 35, rend, { 175, 0, 300, 50 }, { 255,100,100 });
     Font text2 = Font("Witaj Hubert  :)", "Resources/Arial.ttf", 35, rend, { 175, 75, 300, 50 }, { 100,255,100 });

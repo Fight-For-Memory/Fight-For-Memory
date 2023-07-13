@@ -5,6 +5,7 @@ Mouse mouse;
 SDL_Event e;
 bool run = true;
 Game* game;
+Music music;
 
 void Init();
 void Quit();
@@ -33,11 +34,12 @@ void Init()
         throw ("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
     Music::Init();
     TTF_Init();
-    game = new Game(kbd, mouse);
+    game = new Game(kbd, mouse, music);
 }
 
 void Quit()
 {
+    music.Stop();
     IMG_Quit();
     SDL_Quit();
     Mix_Quit();

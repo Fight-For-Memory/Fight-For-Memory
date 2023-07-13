@@ -5,12 +5,12 @@ class Music
 {
 public:
 	static void Init();
-	static void Play(const char * music, int volume = -1);
-	static void SetVolume(int volume);
-	static void Stop();
-	static void Pause();
-	static void Resume();
+	void Play(const char * music, int volume = -1);
+	void SetVolume(int volume);
+	void Stop();
+	void Pause();
+	void Resume();
 private:
-	static Mix_Music* music;
+	Mix_Music* music = nullptr;
 };
 

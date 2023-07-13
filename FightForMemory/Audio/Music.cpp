@@ -7,7 +7,9 @@ void Music::Init()
 
 void Music::Play(const char* music, int volume)
 {
-	Mix_PlayMusic(Mix_LoadMUS(music), -1);
+	if (this->music != nullptr) Mix_FreeMusic(this->music);
+	this->music = Mix_LoadMUS(music);
+	Mix_PlayMusic(this->music, -1);
 	Mix_VolumeMusic(volume);
 }
 
@@ -19,6 +21,9 @@ void Music::SetVolume(int volume)
 void Music::Stop()
 {
 	Mix_HaltMusic();
+	if (music == nullptr) return;
+	Mix_FreeMusic(music);
+	music = nullptr;
 }
 
 void Music::Pause()
