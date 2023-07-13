@@ -1,10 +1,12 @@
 #include "Game.h"
 
-Game::Game(Keyboard& kbd, Mouse& mouse, Music& music)
+Game::Game(Window** window, Renderer** rend, Keyboard& kbd, Mouse& mouse, Music& music)
     :
     kbd(kbd),
     mouse(mouse),
-    music(music)
+    music(music),
+    window(window),
+    rend(rend)
 {
     music.Play("Resources/Music/gravity_turn_action.mp3", 75);
 }
@@ -44,5 +46,5 @@ void Game::Draw()
     texture2.Draw(&rect2);
     texture1.Draw(&rect1);
     texture2.Draw(&rect2);
-    rend.Update();
+    (*rend)->Update();
 }

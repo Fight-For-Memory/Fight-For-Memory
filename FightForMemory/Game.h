@@ -14,13 +14,13 @@
 class Game
 {
 public:
-	Game(Keyboard& kbd, Mouse& mouse, Music& music);
+	Game(Window** window, Renderer** rend, Keyboard& kbd, Mouse& mouse, Music& music);
     ~Game();
     void Update();
     void Draw();
 private:
-    Window window = Window();
-    Renderer rend = Renderer(window);
+    Window** window;
+    Renderer** rend;
     SDL_Rect rect1 = { 175,150,100,200 };
     SDL_Rect rect2 = { 375,150,100,200 };
     Texture texture1 = Texture("Resources/Images/test.bmp", rend);
