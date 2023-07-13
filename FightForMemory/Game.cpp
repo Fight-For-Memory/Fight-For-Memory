@@ -24,18 +24,16 @@ void Game::Update()
         printf("%s \n", "right is pressed");
     if (mouse.MiddleIsPressed())
         printf("%s \n", "middle is pressed");
-    if(kbd.IsKeyDown(SDL_SCANCODE_0))
-        text1.HideText({ 0,0,0,255 });
-    if (kbd.IsKeyDown(SDL_SCANCODE_1))
-        text2.HideText({ 255,0,0,255 });
-    if (kbd.IsKeyDown(SDL_SCANCODE_2))
+    if(kbd.IsKeyDown(SDL_SCANCODE_1))
         text1.DisplayText();
-    if (kbd.IsKeyDown(SDL_SCANCODE_3))
+    if (kbd.IsKeyDown(SDL_SCANCODE_2))
         text2.DisplayText();
-
-   
-   
-    
+    if (kbd.IsKeyDown(SDL_SCANCODE_3))
+        text1.HideText();
+    if (kbd.IsKeyDown(SDL_SCANCODE_4))
+        text2.HideText();
+    if (kbd.IsKeyDown(SDL_SCANCODE_5))
+        rend.SetOriginRectColor();
 }
 
 void Game::Draw()
@@ -44,5 +42,8 @@ void Game::Draw()
     texture2.Draw(&rect2);
     texture1.Draw(&rect1);
     texture2.Draw(&rect2);
+    text1.Draw();
+    text2.Draw();
+    rend.DrawRect(&rect3, {0,0,255});
     rend.Update();
 }

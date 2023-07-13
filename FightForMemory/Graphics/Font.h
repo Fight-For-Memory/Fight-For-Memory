@@ -4,11 +4,15 @@
 class Font
 {
 public:
-	Font(const char* text, const char* font_style, int font_size, Renderer& renderer, SDL_Rect rect, SDL_Color color);
+	Font(const char* text, Renderer& renderer, SDL_Rect rect, SDL_Color color);
 	~Font();
+	void Draw();
 	void DisplayText();
-	void HideText(SDL_Color backGround);
+	void HideText();
 private:
+	const char* font_style;
+	int font_sharpness;
+	bool isVisible = false;
 	Renderer& renderer;
 	SDL_Surface* surfaceMessage; 
 	SDL_Texture* Message;

@@ -8,13 +8,13 @@ class Renderer
 public: 
 	Renderer(Window& window);
 	~Renderer();
-	void DrawRect(SDL_Rect* rect);
+	void DrawRect(SDL_Rect* rect, Color color);
 	void Update();
+	void SetOriginRectColor();
+	void Clear();
 private:
-	void SetDrawColor(Color Color);
 	SDL_Renderer* sdl_renderer;
-	Color DrawColor = {0,0,0};
-
+	Color BackgroundColor = {0,0,0};
 	friend class Texture;
 	friend class Font;
 };

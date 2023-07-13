@@ -41,7 +41,8 @@ void Quit()
 {
     music.Stop();
     IMG_Quit();
-    SDL_Quit();
     Mix_Quit();
     Mix_CloseAudio();
+    TTF_Quit();
+    SDL_Quit();
 }
