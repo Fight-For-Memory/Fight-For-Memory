@@ -1,12 +1,12 @@
 #include "Game.h"
 
-Game::Game(Window** window, Renderer** rend, Keyboard& kbd, Mouse& mouse, Music& music)
+Game::Game(Window** window, Keyboard& kbd, Mouse& mouse, Music& music)
     :
     kbd(kbd),
     mouse(mouse),
     music(music),
     window(window),
-    rend(rend)
+    rend((*window)->GetRenderer())
 {
     music.Play("Resources/Music/gravity_turn_action.mp3", 75);
 }

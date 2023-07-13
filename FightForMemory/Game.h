@@ -14,7 +14,7 @@
 class Game
 {
 public:
-	Game(Window** window, Renderer** rend, Keyboard& kbd, Mouse& mouse, Music& music);
+	Game(Window** window, Keyboard& kbd, Mouse& mouse, Music& music);
     ~Game();
     void Update();
     void Draw();

@@ -1,8 +1,9 @@
 #include "Renderer.h"
 
-Renderer::Renderer(Window& window)
+Renderer::Renderer(SDL_Window* window)
 {
-	sdl_renderer = SDL_CreateRenderer(window.window, -1, SDL_RENDERER_ACCELERATED);
+	sdl_renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	if (sdl_renderer == nullptr) throw "SDL_Renderer is null";
 
 	SDL_RenderClear(sdl_renderer);
 	SDL_SetRenderDrawColor(sdl_renderer, DrawColor.r, DrawColor.g, DrawColor.b , DrawColor.a);
