@@ -187,7 +187,7 @@
     <ClInclude Include="Graphics\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="Resources\magic space.mp3" />
+    <Media Include="Resources\Music\magic space.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,7 +6,7 @@ Game::Game(Keyboard& kbd, Mouse& mouse, Music& music)
     mouse(mouse),
     music(music)
 {
-    music.Play("Resources/gravity_turn_action.mp3", 75);
+    music.Play("Resources/Music/gravity_turn_action.mp3", 75);
 }
 
 Game::~Game()
