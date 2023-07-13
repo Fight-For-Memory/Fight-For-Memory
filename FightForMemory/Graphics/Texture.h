@@ -12,7 +12,7 @@ enum class FileType
 class Texture
 {
 public:
-	Texture(const char* filename, Renderer& renderer, FileType type);
+	Texture(const char* filename, Renderer& renderer, FileType type = FileType::bitmap);
 	~Texture();
 	Texture(const Texture& src) = delete;
 	Texture& operator=(const Texture& src) = delete;

@@ -23,7 +23,7 @@ private:
     Renderer rend = Renderer(window);
     SDL_Rect rect1 = { 175,150,100,200 };
     SDL_Rect rect2 = { 375,150,100,200 };
-    Texture texture1 = Texture("Resources/test.bmp", rend, FileType::bitmap);
+    Texture texture1 = Texture("Resources/test.bmp", rend);
     Texture texture2 = Texture("Resources/zdj.jpg", rend, FileType::png);
     Keyboard& kbd;
     Mouse& mouse;

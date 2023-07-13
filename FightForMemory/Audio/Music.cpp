@@ -7,10 +7,8 @@ void Music::Init()
 
 void Music::Play(const char* music, int volume)
 {
-	//Music::music = 
 	Mix_PlayMusic(Mix_LoadMUS(music), -1);
 	Mix_VolumeMusic(volume);
-
 }
 
 void Music::SetVolume(int volume)
