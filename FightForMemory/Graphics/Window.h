@@ -7,15 +7,17 @@ class Window
 public:
 	Window(int width, int height);
 	~Window();
-	//Screen dimension constants
-	const int width;
-	const int height;
 
 	Renderer** GetRenderer();
+
+	void Resize(int width, int height);
 
 private:
 	SDL_Window* window;
 	Renderer* renderer;
+
+	int width;
+	int height;
 
 	friend class Renderer;
 };

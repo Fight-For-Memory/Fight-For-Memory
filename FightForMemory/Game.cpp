@@ -34,6 +34,16 @@ void Game::Update()
         text1.DisplayText();
     if (kbd.IsKeyDown(SDL_SCANCODE_3))
         text2.DisplayText();
+    if (kbd.IsKeyDown(SDL_SCANCODE_A))
+    {
+        (*window)->Resize(1000, 500);
+        printf("%s \n", "Resize A");
+    }
+    if (kbd.IsKeyDown(SDL_SCANCODE_B))
+    {
+        (*window)->Resize(640, 480);
+        printf("%s \n", "Resize B");
+    }
 
    
    
