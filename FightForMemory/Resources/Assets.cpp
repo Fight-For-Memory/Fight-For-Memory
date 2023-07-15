@@ -7,8 +7,8 @@ Assets::Assets(Renderer** rend)
 {
 	for (const auto& entry : fs::directory_iterator("Resources/Images"))
 		if (entry.is_regular_file())
-			if(entry.path().filename().extension().string() == "bmp")
-				Textures[entry.path().filename().stem().string()] = new Texture(entry.path().string().c_str(), rend);
+			if(entry.path().filename().extension().string() == ".bmp")
+				Textures[entry.path().filename().stem().string()] = new Texture(entry.path().string().c_str(), rend, FileType::bitmap);
 			else
 				Textures[entry.path().filename().stem().string()] = new Texture(entry.path().string().c_str(), rend, FileType::png);
 

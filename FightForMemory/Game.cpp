@@ -58,6 +58,6 @@ void Game::Update()
 void Game::Draw()
 {
     assets->GetTexture("test").Draw(&rect1);
-    assets->GetTexture("zdj").Draw(&rect1);
+    assets->GetTexture("zdj").Draw(&rect2);
     (*rend)->Update();
 }
