@@ -18,15 +18,11 @@ int main(int argc, char* argv[]) {
     SDL_Texture* bmp;
 
     // Inicjuje SDL
-    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER)) {
-        fprintf(stderr, "Nie mo¿na zainicjowaæ SDL - %s\n", SDL_GetError());
-        exit(1);
-    }
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER);
+
 
     // Otwiera plik wideo
-    if (avformat_open_input(&pFormatCtx, "test2.mp4", NULL, NULL) != 0) {
-        return -1; // Nie mo¿na otworzyæ pliku
-    }
+    avformat_open_input(&pFormatCtx, "test2.mp4", NULL, NULL);
 
     // Szuka strumienia wideo
     videoStream = -1;
@@ -35,31 +31,20 @@ int main(int argc, char* argv[]) {
             videoStream = i;
             break;
         }
-    if (videoStream == -1) return -1; // Nie znaleziono strumienia wideo
 
     // Znajduje odpowiedni dekoder dla strumienia wideo
     pCodec = avcodec_find_decoder(pFormatCtx->streams[videoStream]->codecpar->codec_id);
-    if (pCodec == NULL) {
-        fprintf(stderr, "Nieobs³ugiwany kodek!\n");
-        return -1;
-    }
 
     // Uzyskuje wskaŸnik na kontekst kodeka
     pCodecCtx = avcodec_alloc_context3(pCodec);
-    if (avcodec_parameters_to_context(pCodecCtx, pFormatCtx->streams[videoStream]->codecpar) < 0) {
-        return -1; // Nie mo¿na uzyskaæ kontekstu kodeka
-    }
+    avcodec_parameters_to_context(pCodecCtx, pFormatCtx->streams[videoStream]->codecpar);
 
     // Otwiera kodek
-    if (avcodec_open2(pCodecCtx, pCodec, NULL) < 0) return -1; // Nie mo¿na otworzyæ kodeka
+    avcodec_open2(pCodecCtx, pCodec, NULL);
 
     pFrame = av_frame_alloc();
 
     screen = SDL_CreateWindow("Moje wideo", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, pCodecCtx->width, pCodecCtx->height, 0);
-    if (!screen) {
-        fprintf(stderr, "SDL: Nie mo¿na ustawiæ trybu wideo - wyjœcie\n");
-        exit(1);
-    }
 
     renderer = SDL_CreateRenderer(screen, -1, 0);
     bmp = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_YV12, SDL_TEXTUREACCESS_STREAMING, pCodecCtx->width, pCodecCtx->height);
