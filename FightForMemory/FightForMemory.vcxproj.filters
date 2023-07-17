@@ -25,6 +25,6 @@
     <ClInclude Include="Game.h" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="Resources\magic space.mp3" />
+    <Media Include="Resources\Music\magic space.mp3" />
   </ItemGroup>
 </Project>
