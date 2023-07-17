@@ -65,6 +65,10 @@ int main(int argc, char* argv[]) {
     bmp = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_YV12, SDL_TEXTUREACCESS_STREAMING, pCodecCtx->width, pCodecCtx->height);
 
 
+    double fps = av_q2d(pFormatCtx->streams[videoStream]->avg_frame_rate); // Œrednia liczba klatek na sekundê
+    Uint32 delay = (Uint32)(1000.0 / fps); // Czas opóŸnienia miêdzy klatkami w milisekundach
+
+
     // Odczytuje plik
     while (av_read_frame(pFormatCtx, &packet) >= 0) {
         // Tylko strumienie wideo
@@ -78,6 +82,7 @@ int main(int argc, char* argv[]) {
                 SDL_RenderClear(renderer);
                 SDL_RenderCopy(renderer, bmp, NULL, NULL);
                 SDL_RenderPresent(renderer);
+                SDL_Delay(delay); // OpóŸnienie synchronizuj¹ce z FPS
             }
         }
         av_packet_unref(&packet);
