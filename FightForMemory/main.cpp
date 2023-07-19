@@ -6,6 +6,7 @@ SDL_Event e;
 bool run = true;
 Game* game;
 Music music;
+Window* window = new Window(640,480);
 
 void Init();
 void Quit();
@@ -34,7 +35,7 @@ void Init()
         throw ("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
     Music::Init();
     TTF_Init();
-    game = new Game(kbd, mouse, music);
+    game = new Game(&window, kbd, mouse, music);
 }
 
 void Quit()

@@ -1,12 +1,11 @@
 #pragma once
 #include <SDL.h>
-#include "Window.h"
 #include "Color.h"
 
 class Renderer
 {
 public: 
-	Renderer(Window& window);
+	Renderer(SDL_Window* window);
 	~Renderer();
 	void DrawRect(SDL_Rect* rect);
 	void Update();

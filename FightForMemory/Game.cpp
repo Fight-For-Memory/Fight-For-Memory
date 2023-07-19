@@ -1,12 +1,15 @@
 #include "Game.h"
 
-Game::Game(Keyboard& kbd, Mouse& mouse, Music& music)
+Game::Game(Window** window, Keyboard& kbd, Mouse& mouse, Music& music)
     :
     kbd(kbd),
     mouse(mouse),
-    music(music)
+    music(music),
+    window(window),
+    rend((*window)->GetRenderer())
 {
     music.Play("Resources/Music/gravity_turn_action.mp3", 75);
+    assets = new Assets(rend);
 }
 
 Game::~Game()
@@ -25,24 +28,35 @@ void Game::Update()
     if (mouse.MiddleIsPressed())
         printf("%s \n", "middle is pressed");
     if(kbd.IsKeyDown(SDL_SCANCODE_0))
-        text1.HideText({ 0,0,0,255 });
+        assets->text1->HideText({ 0,0,0,255 });
     if (kbd.IsKeyDown(SDL_SCANCODE_1))
-        text2.HideText({ 255,0,0,255 });
+        assets->text2->HideText({ 255,0,0,255 });
     if (kbd.IsKeyDown(SDL_SCANCODE_2))
-        text1.DisplayText();
+        assets->text1->DisplayText();
     if (kbd.IsKeyDown(SDL_SCANCODE_3))
-        text2.DisplayText();
-
-   
-   
-    
+        assets->text2->DisplayText();
+    if (kbd.IsKeyDown(SDL_SCANCODE_A))
+    {
+        Resize(1000, 500);
+        printf("%s \n", "Resize A");
+    }
+    if (kbd.IsKeyDown(SDL_SCANCODE_B))
+    {
+        Resize(640, 480);
+        printf("%s \n", "Resize B");
+    }
 }
 
 void Game::Draw()
 {
-    texture1.Draw(&rect1);
-    texture2.Draw(&rect2);
-    texture1.Draw(&rect1);
-    texture2.Draw(&rect2);
-    rend.Update();
+    assets->GetTexture("test").Draw(&rect1);
+    assets->GetTexture("zdj").Draw(&rect2);
+    (*rend)->Update();
+}
+
+void Game::Resize(int width, int height)
+{
+    (*window)->Resize(width, height);
+    delete assets;
+    assets = new Assets(rend);
 }
