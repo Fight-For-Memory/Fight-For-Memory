@@ -37,22 +37,14 @@ void Game::Update()
         assets->text2->DisplayText();
     if (kbd.IsKeyDown(SDL_SCANCODE_A))
     {
-        (*window)->Resize(1000, 500);
-        delete assets;
-        assets = new Assets(rend);
+        Resize(1000, 500);
         printf("%s \n", "Resize A");
     }
     if (kbd.IsKeyDown(SDL_SCANCODE_B))
     {
-        (*window)->Resize(640, 480);
-        delete assets;
-        assets = new Assets(rend);
+        Resize(640, 480);
         printf("%s \n", "Resize B");
     }
-
-   
-   
-    
 }
 
 void Game::Draw()
@@ -60,4 +52,11 @@ void Game::Draw()
     assets->GetTexture("test").Draw(&rect1);
     assets->GetTexture("zdj").Draw(&rect2);
     (*rend)->Update();
+}
+
+void Game::Resize(int width, int height)
+{
+    (*window)->Resize(width, height);
+    delete assets;
+    assets = new Assets(rend);
 }

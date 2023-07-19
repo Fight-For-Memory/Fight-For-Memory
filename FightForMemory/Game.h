@@ -19,6 +19,7 @@ public:
     ~Game();
     void Update();
     void Draw();
+    void Resize(int width, int height);
 private:
     Window** window;
     Renderer** rend;
