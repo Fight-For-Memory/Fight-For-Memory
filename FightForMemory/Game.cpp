@@ -57,5 +57,6 @@ void Game::Draw()
 void Game::Resize(int width, int height)
 {
     (*window)->Resize(width, height);
-    assets->Reload();
+    delete assets;
+    assets = new Assets(rend);
 }
