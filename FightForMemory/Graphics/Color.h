@@ -1,10 +1,5 @@
 #pragma once
 
-struct Color 
-{
-	unsigned char r, g, b, a = 255;
-};
-
 namespace Colors
 {
 	static constexpr Uint32 White = 0xFFFFFFFF;    

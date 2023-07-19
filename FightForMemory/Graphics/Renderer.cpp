@@ -11,7 +11,7 @@ Renderer::~Renderer()
 	SDL_DestroyRenderer(sdl_renderer);
 }
 
-void Renderer::DrawRect(SDL_Rect* rect, Color color)
+void Renderer::DrawRect(SDL_Rect* rect, SDL_Color color)
 {
 	SDL_SetRenderDrawColor(sdl_renderer, color.r, color.g, color.b, color.a);
 	SDL_RenderFillRect(sdl_renderer, rect);
