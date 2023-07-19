@@ -12,16 +12,18 @@ Assets::Assets(Renderer** rend)
 			else
 				Textures[entry.path().filename().stem().string()] = new Texture(entry.path().string().c_str(), rend, FileType::png);
 
-	text1 = new Font("Witaj Cyprian :)", "Resources/Fonts/Arial.ttf", 35, rend, { 175, 0, 300, 50 }, { 255,100,100 });
-	text2 = new Font("Witaj Hubert  :)", "Resources/Fonts/Arial.ttf", 35, rend, { 175, 75, 300, 50 }, { 100,255,100 });
+	font = new Font( "Resources/Fonts/Arial.ttf", 35);
+	Cyprian = new Text("Witaj Cyprian :)", font, rend, { 175, 0, 300, 50 }, { 255,100,100 });
+	Hubert = new Text("Witaj Hubert  :)", font, rend, { 175, 75, 300, 50 }, { 100,255,100 });
 }
 
 Assets::~Assets()
 {
 	for (auto t : Textures)
 		delete t.second;
-	delete text1;
-	delete text2;
+	delete font;
+	delete Cyprian;
+	delete Hubert;
 }
 
 Texture& Assets::GetTexture(std::string name)

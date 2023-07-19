@@ -16,4 +16,5 @@ private:
 
 	friend class Texture;
 	friend class Font;
+	friend class Text;
 };

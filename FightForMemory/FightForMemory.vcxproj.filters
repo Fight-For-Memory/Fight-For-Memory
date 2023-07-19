@@ -11,6 +11,8 @@
     <ClCompile Include="Graphics\Renderer.cpp" />
     <ClCompile Include="Graphics\Window.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Resources\Assets.cpp" />
+    <ClCompile Include="Graphics\Text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio\Music.h" />
@@ -23,8 +25,10 @@
     <ClInclude Include="Graphics\Renderer.h" />
     <ClInclude Include="Graphics\Window.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Resources\Assets.h" />
+    <ClInclude Include="Graphics\Text.h" />
   </ItemGroup>
   <ItemGroup>
-    <Media Include="Resources\magic space.mp3" />
+    <Media Include="Resources\Music\magic space.mp3" />
   </ItemGroup>
 </Project>

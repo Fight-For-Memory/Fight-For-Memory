@@ -28,13 +28,13 @@ void Game::Update()
     if (mouse.MiddleIsPressed())
         printf("%s \n", "middle is pressed");
     if(kbd.IsKeyDown(SDL_SCANCODE_0))
-        assets->text1->HideText({ 0,0,0,255 });
+        assets->Cyprian->HideText({ 0,0,0,255 });
     if (kbd.IsKeyDown(SDL_SCANCODE_1))
-        assets->text2->HideText({ 255,0,0,255 });
+        assets->Hubert->HideText({ 255,0,0,255 });
     if (kbd.IsKeyDown(SDL_SCANCODE_2))
-        assets->text1->DisplayText();
+        assets->Cyprian->DisplayText();
     if (kbd.IsKeyDown(SDL_SCANCODE_3))
-        assets->text2->DisplayText();
+        assets->Hubert->DisplayText();
     if (kbd.IsKeyDown(SDL_SCANCODE_A))
     {
         Resize(1000, 500);
