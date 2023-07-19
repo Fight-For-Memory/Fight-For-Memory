@@ -173,6 +173,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Graphics\Renderer.cpp" />
     <ClCompile Include="Graphics\Window.cpp" />
+    <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio\Music.h" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Graphics\Texture.h" />
     <ClInclude Include="Graphics\Renderer.h" />
     <ClInclude Include="Graphics\Window.h" />
+    <ClInclude Include="Sprite.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resources\Music\magic space.mp3" />

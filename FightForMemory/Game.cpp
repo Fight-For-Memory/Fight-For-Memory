@@ -45,5 +45,6 @@ void Game::Draw()
     text1.Draw();
     text2.Draw();
     rend.DrawRect(&rect3, {0,0,255});
+    link.DrawSprite();
     rend.Update();
 }
