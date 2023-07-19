@@ -9,6 +9,7 @@ public:
 	~Text();
 	void DisplayText();
 	void HideText(SDL_Color backGround);
+	void Reload();
 private:
 	Font* font;
 	SDL_Rect rect;
@@ -16,5 +17,8 @@ private:
 	SDL_Texture* Message;
 	SDL_Color color;
 	Renderer** renderer;
+	const char* text;
 };
+
+
 

@@ -17,9 +17,12 @@ public:
 	Texture(const Texture& src) = delete;
 	Texture& operator=(const Texture& src) = delete;
 	void Draw(SDL_Rect* position) const;
+	void Reload();
 private:
 	Renderer** renderer;
 	SDL_Surface* image;
 	SDL_Texture* tex = NULL;
+	const char* filename;
+	FileType filetype;
 };
 

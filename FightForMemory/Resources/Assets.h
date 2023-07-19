@@ -13,11 +13,15 @@ public:
 	~Assets();
 	Texture& GetTexture(std::string name);
 	Font& GetFont(std::string name);
+	void Reload();
 	Font* font;
 	Text* Cyprian;
 	Text* Hubert;
 private:
+	void LoadTextures();
+	void DestroyTextures();
 	std::map<std::string, Texture*> Textures;
 	Sound PlayerSounds = Sound(1, "Resources/Sounds");
+	Renderer** rend;
 
 };
