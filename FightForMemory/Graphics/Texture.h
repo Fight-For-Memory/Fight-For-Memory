@@ -18,6 +18,7 @@ public:
 	Texture& operator=(const Texture& src) = delete;
 	void Draw(SDL_Rect* position) const;
 	void Draw(SDL_Rect* position, SDL_Rect* clip) const;
+	
 private:
 	Renderer& renderer;
 	SDL_Surface* image;

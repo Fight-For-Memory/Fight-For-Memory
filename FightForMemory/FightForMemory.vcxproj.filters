@@ -12,6 +12,7 @@
     <ClCompile Include="Graphics\Window.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Animation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio\Music.h" />
@@ -25,6 +26,7 @@
     <ClInclude Include="Graphics\Window.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Animation.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="Resources\Music\magic space.mp3" />

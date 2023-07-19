@@ -6,9 +6,7 @@ Sprite::Sprite(const char* filename, Renderer& renderer)
 	tex(filename, renderer, FileType::bitmap, Colors::Magenta)
 {}
 
-void Sprite::DrawSprite()
+void Sprite::DrawSprite(SDL_Rect* position, SDL_Rect* clip)
 {
-	SDL_Rect position = { 100,100,100,100 };
-	SDL_Rect clip = { 0, 0, 100, 100 };
-	tex.Draw(&position, &clip);
+	tex.Draw(position, clip);
 }

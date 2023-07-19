@@ -163,6 +163,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Audio\Music.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics\Font.cpp" />
@@ -176,6 +177,7 @@
     <ClCompile Include="Sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Audio\Music.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics\Color.h" />

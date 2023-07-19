@@ -11,6 +11,7 @@
 #include "Mouse.h"
 #include "Font.h"
 #include "Sprite.h"
+#include "Animation.h"
 
 class Game
 {
@@ -34,5 +35,6 @@ private:
     Font text1 = Font("Witaj Cyprian :)", rend, { 175, 0, 300, 50 }, { 255,100,100 });
     Font text2 = Font("Witaj Hubert  :)", rend, { 175, 75, 300, 50 }, { 100,255,100 });
     Sprite link = Sprite("Resources/Images/link90x90.bmp", rend);
+    std::vector<Animation> animations;
     bool run = true;
 };
