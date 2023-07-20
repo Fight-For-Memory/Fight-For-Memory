@@ -10,5 +10,4 @@ public:
 	void DrawSprite(SDL_Rect* position, SDL_Rect* clip);
 private:
 	Texture tex;
-	Renderer& rend;
 };

@@ -2,7 +2,6 @@
 
 Sprite::Sprite(const char* filename, Renderer& renderer)
 	:
-	rend(renderer),
 	tex(filename, renderer, FileType::bitmap, Colors::Magenta)
 {}
 

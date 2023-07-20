@@ -7,11 +7,6 @@ Game::Game(Keyboard& kbd, Mouse& mouse, Music& music)
     music(music)
 {
     music.Play("Resources/Music/gravity_turn_action.mp3", 75);
-
-    for (int i = 0; i < 4; i++)
-    {
-        animations.emplace_back(Animation(90, 90 * i, 90, 90, 4, 10000.f, link));
-    }
 }
 
 Game::~Game()
@@ -39,10 +34,8 @@ void Game::Update()
         text2.HideText();
     if (kbd.IsKeyDown(SDL_SCANCODE_5))
         rend.SetOriginRectColor();
-    if (kbd.IsKeyDown(SDL_SCANCODE_6))
-        animations[0].Draw(mouse.GetPosX(), mouse.GetPosY());
-    if (kbd.IsKeyDown(SDL_SCANCODE_7))
-        animations[1].Draw(mouse.GetPosX(), mouse.GetPosY());
+
+    player.Update(0.05f);
 }
 
 void Game::Draw()
@@ -54,5 +47,6 @@ void Game::Draw()
     text1.Draw();
     text2.Draw();
     rend.DrawRect(&rect3, {0,0,255});
+    player.Draw();
     rend.Update();
 }
