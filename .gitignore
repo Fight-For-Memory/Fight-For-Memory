@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/FightForMemory/test2.mp4
+/FightForMemory/test.mp4
